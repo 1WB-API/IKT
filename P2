@@ -1,0 +1,46 @@
+print('ЧАСТЬ 1: ')
+print('Введите число: ')
+x = float(input())
+
+# a)
+print('Если интервал равен (-3; 0), то: ')
+s_r = -3
+e_r = 0
+
+if s_r < x < e_r:
+    print("Точка принадлежит интервалу")
+else:
+    print("Точка не принадлежит интервалу")
+
+# б)
+print('Если интервал равен [3; 6] U (10; 20), то: ')
+s_r1 = 3
+e_r1 = 6
+s_r2 = 10
+e_r2 = 20
+if (s_r1 <= x <= e_r1) or (s_r2 < x < e_r2):
+    print("Точка принадлежит интервалу")
+else:
+    print("Точка не принадлежит интервалу")
+
+
+print('ЧАСТЬ 2: ')
+import math
+t = float(input('Введите t'))
+a = t + 1
+b = 4*t
+c = 3*t
+if a == 0:
+    x = -c/2*a
+else:
+    D = b**2 - 4*a*c
+    print('D:', D)
+    print('a:', a)
+    print('b:', b)
+    print('c:', c)
+    if D >= 0:
+        x1 = (-b + math.sqrt(D)) / (2 * a)
+        x2 = (-b - math.sqrt(D)) / (2 * a)
+        print('x1 =', x1, 'x2 =', x2)
+    else:
+        print('D < 0')
