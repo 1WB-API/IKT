@@ -1,0 +1,32 @@
+def process_array(arr):
+    modified_arr = arr.copy()
+    count_negatives = 0
+
+    for i in range(len(modified_arr)):
+        if i % 2 == 0:  # Четные индексы
+            modified_arr[i] *= 2
+        else:  # Нечетные индексы
+            if modified_arr[i] < 0:
+                count_negatives += 1
+            modified_arr[i] = 0
+
+    return modified_arr, count_negatives
+
+def print_array(arr):
+    for elem in arr:
+        print(elem, end=" ")
+    print()
+
+# Исходный массив B(m)
+B = [5, -3, 8, 10, -2, 7, -1, 4, 6, -9, 12, -5, 3, 0, -6]
+m = len(B)
+
+print("Исходный массив:")
+print_array(B)
+
+modified_array, count_negatives = process_array(B)
+
+print("\nПреобразованный массив:")
+print_array(modified_array)
+
+print(f"\nКоличество отрицательных элементов в преобразованном массиве: {count_negatives}")
